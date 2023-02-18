@@ -12,16 +12,11 @@
   [paginator]="true"
   currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
   [filterDelay]="0"
-  [globalFilterFields]="[
-    'name',
-    'country.name',
-    'representative.name',
-    'status'
-  ]"
+  [globalFilterFields]="['name', 'art', 'link', 'rezept_ausprobiert']"
 >
   <ng-template pTemplate="caption">
     <div class="table-header">
-      List of Customers
+      Dishlist
       <span class="p-input-icon-left">
         <i class="pi pi-search"></i>
         <input
@@ -40,19 +35,19 @@
         Name <p-sortIcon field="name"></p-sortIcon>
       </th>
       <th pSortableColumn="country.name">
-        Country <p-sortIcon field="country.name"></p-sortIcon>
+        Art <p-sortIcon field="country.name"></p-sortIcon>
       </th>
       <th pSortableColumn="representative.name">
-        Representative <p-sortIcon field="representative.name"></p-sortIcon>
+        Link <p-sortIcon field="representative.name"></p-sortIcon>
       </th>
       <th pSortableColumn="date">
-        Date <p-sortIcon field="date"></p-sortIcon>
+        Rezept ausprobiert? <p-sortIcon field="date"></p-sortIcon>
       </th>
-      <th pSortableColumn="status">
+      <!--     <th pSortableColumn="status">
         Status <p-sortIcon field="status"></p-sortIcon>
-      </th>
+      </th> -->
       <th pSortableColumn="activity">
-        Activity <p-sortIcon field="activity"></p-sortIcon>
+        Zeitaufwand <p-sortIcon field="activity"></p-sortIcon>
       </th>
       <th style="width: 8rem"></th>
     </tr>
@@ -104,7 +99,7 @@
           dateFormat="yy-mm-dd"
         ></p-calendar>
       </th>
-      <th>
+      <!-- <th>
         <p-dropdown
           [options]="statuses"
           (onChange)="dt.filter($event.value, 'status', 'equals')"
@@ -118,7 +113,7 @@
             >
           </ng-template>
         </p-dropdown>
-      </th>
+      </th> -->
       <th>
         <input
           pInputText
@@ -152,12 +147,12 @@
         <span class="p-column-title">Date</span>
         {{ customer.date }}
       </td>
-      <td>
+      <!-- <td>
         <span class="p-column-title">Status</span>
         <span [class]="'customer-badge status-' + customer.status">{{
           customer.status
         }}</span>
-      </td>
+      </td> -->
       <td>
         <span class="p-column-title">Activity</span>
         <p-progressBar

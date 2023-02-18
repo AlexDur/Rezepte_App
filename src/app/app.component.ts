@@ -40,20 +40,12 @@ export class AppComponent {
       { name: 'Asiya Javayant', image: 'asiyajavayant.png' },
       { name: 'Bernardo Dominic', image: 'bernardodominic.png' },
       { name: 'Elwin Sharvill', image: 'elwinsharvill.png' },
-      { name: 'Ioni Bowcher', image: 'ionibowcher.png' },
-      { name: 'Ivan Magalhaes', image: 'ivanmagalhaes.png' },
-      { name: 'Onyama Limba', image: 'onyamalimba.png' },
-      { name: 'Stephen Shaw', image: 'stephenshaw.png' },
-      { name: 'XuXue Feng', image: 'xuxuefeng.png' },
     ];
 
     this.statuses = [
-      { label: 'Unqualified', value: 'unqualified' },
-      { label: 'Qualified', value: 'qualified' },
-      { label: 'New', value: 'new' },
-      { label: 'Negotiation', value: 'negotiation' },
-      { label: 'Renewal', value: 'renewal' },
-      { label: 'Proposal', value: 'proposal' },
+      { label: 'Gekocht', value: 'gekocht' },
+      { label: 'Noch nicht gekocht', value: 'nichtgekocht' },
+      { label: 'XXX', value: 'xxx' },
     ];
     this.primengConfig.ripple = true;
   }
