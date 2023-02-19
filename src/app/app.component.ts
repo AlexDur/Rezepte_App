@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Customer, Representative } from './customer';
+import { Link, Rezept } from './customer';
 
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
@@ -11,13 +11,13 @@ import { CustomerService } from './customer.service';
   styleUrls: ['./appdemo.component.scss'],
 })
 export class AppComponent {
-  customers: Customer[] = [];
+  rezepte: Rezept[] = [];
 
-  selectedCustomers: Customer[] = [];
+  selectedRezepte: Rezept[] = [];
 
-  representatives: Representative[] = [];
+  links: Link[] = [];
 
-  statuses: any[] = [];
+  rezept_ausprobiert: any[] = [];
 
   loading: boolean = true;
 
@@ -29,12 +29,12 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    this.customerService.getCustomersLarge().then((customers: Customer[]) => {
-      this.customers = customers;
+    this.customerService.getCustomersLarge().then((rezepte: Rezept[]) => {
+      this.rezepte = rezepte;
       this.loading = false;
     });
 
-    this.representatives = [
+    this.links = [
       { name: 'Amy Elsner', image: 'amyelsner.png' },
       { name: 'Anna Fali', image: 'annafali.png' },
       { name: 'Asiya Javayant', image: 'asiyajavayant.png' },
@@ -42,7 +42,7 @@ export class AppComponent {
       { name: 'Elwin Sharvill', image: 'elwinsharvill.png' },
     ];
 
-    this.statuses = [
+    this.rezept_ausprobiert = [
       { label: 'Gekocht', value: 'gekocht' },
       { label: 'Noch nicht gekocht', value: 'nichtgekocht' },
       { label: 'XXX', value: 'xxx' },
@@ -69,7 +69,7 @@ export class AppComponent {
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0');
     const year = date.getFullYear().toString();
-    return `${year}-${month}-${day}`;
+    return `${day}-${month}-${year}`;
   }
 
   onRepresentativeChange(event: Event) {

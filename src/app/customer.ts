@@ -3,12 +3,12 @@ export interface Country {
   code?: string;
 }
 
-export interface Representative {
+export interface Link {
   name?: string;
   image?: string;
 }
 
-export interface Customer {
+export interface Rezept {
   id?: number;
   name?: number;
   art?: Country;
