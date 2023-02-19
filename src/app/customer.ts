@@ -1,4 +1,4 @@
-export interface Country {
+export interface Art {
   name?: string;
   code?: string;
 }
@@ -11,7 +11,7 @@ export interface Link {
 export interface Rezept {
   id?: number;
   name?: number;
-  art?: Country;
+  art?: Art;
   links?: string;
   rezept_ausprobiert?: string;
   zeitstatus?: number;
